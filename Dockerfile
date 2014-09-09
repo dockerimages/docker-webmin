@@ -3,7 +3,7 @@ FROM dockerimages/ubuntu-core:14.04
 MAINTAINER Frank Lemanschik
 #RUN echo "deb http://download.webmin.com/download/repository trusty contrib \n\
 #deb http://webmin.mirror.somersettechsolutions.co.uk/repository trusty contrib" > /etc/apt/sources.list.d/webmin.list \
- && apt-get update && apt-get install \
+RUN apt-get update && apt-get install \
  wget \
  perl \
  libnet-ssleay-perl \
