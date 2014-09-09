@@ -9,8 +9,9 @@ RUN apt-get update && apt-get install \
  libnet-ssleay-perl \
  openssl \
  libauthen-pam-perl \
- libpam-runtime libio-pty-perl \
-  webmin screen \
+ libpam-runtime \
+ libio-pty-perl \
+ screen \
  apt-show-versions \
  python \
  && wget http://prdownloads.sourceforge.net/webadmin/usermin_1.610_all.deb \
