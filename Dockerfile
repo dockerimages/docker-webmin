@@ -5,11 +5,9 @@ MAINTAINER Frank Lemanschik
 #deb http://webmin.mirror.somersettechsolutions.co.uk/repository trusty contrib" > /etc/apt/sources.list.d/webmin.list \
 RUN apt-get update && apt-get install \
  wget \
- perl \
  libnet-ssleay-perl \
  openssl \
  libauthen-pam-perl \
- libpam-runtime \
  libio-pty-perl \
  screen \
  apt-show-versions \
