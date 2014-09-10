@@ -13,5 +13,8 @@ RUN cat /etc/apt/apt.conf.d/01buildconfig
 RUN apt-get update
 RUN /lampp.sh
 RUN /webmin.sh
+RUN apt-get update && apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+RUN echo 'root:root' |chpasswd
 CMD ["screen" "-AmdS" "service" "webmin" "start"]
 
