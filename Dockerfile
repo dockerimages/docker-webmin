@@ -3,7 +3,8 @@ FROM dockerimages/ubuntu-core:14.04
 MAINTAINER Frank Lemanschik
 #RUN echo "deb http://download.webmin.com/download/repository trusty contrib \n\
 #deb http://webmin.mirror.somersettechsolutions.co.uk/repository trusty contrib" > /etc/apt/sources.list.d/webmin.list \
-RUN apt-get update && apt-get install \
+RUN echo Acquire::GzipIndexes "false"; > /etc/apt/apt.conf.d/docker-gzip-indexes
+ && apt-get update && apt-get install \
  wget \
  libnet-ssleay-perl \
  openssl \
@@ -17,3 +18,4 @@ RUN apt-get update && apt-get install \
  && dpkg --install webmin_1.700_all.deb \
  && dpkg --install usermin_1.610_all.deb
 CMD ["screen" "-AmdS" "service" "webmin" "start"]
+
