@@ -16,5 +16,7 @@ RUN /webmin.sh
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:root' |chpasswd
-CMD ["screen" "-AmdS" "service" "webmin" "start"]
+ADD ./run.sh /run.sh
+RUN chmod +x /run.sh
+CMD ["screen" "-AmdS" "/run.sh"]
 
