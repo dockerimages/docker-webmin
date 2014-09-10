@@ -9,7 +9,7 @@ ADD https://raw.githubusercontent.com/dockerimages/ubuntu-installer/master/lampp
 ADD https://raw.githubusercontent.com/dockerimages/ubuntu-installer/master/webmin.sh /webmin.sh
 RUN chmod +x *.sh
 RUN /prepare-base.sh
-RUN /etc/apt/apt.conf.d/01buildconfig
+RUN cat /etc/apt/apt.conf.d/01buildconfig
 RUN apt-get update
 RUN /lampp.sh
 RUN /webmin.sh
