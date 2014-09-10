@@ -18,5 +18,5 @@ RUN mkdir /var/run/sshd
 RUN echo 'root:root' |chpasswd
 ADD ./run.sh /run.sh
 RUN chmod +x /run.sh
-CMD ["screen" "-AmdS" "/run.sh"]
+CMD ["/run.sh"]
 
